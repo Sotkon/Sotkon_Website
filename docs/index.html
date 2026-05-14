@@ -315,10 +315,24 @@
               <li>Case-study template with savings and installation data</li>
               <li>Multilingual structure for EN, PT, FR, ES and RO</li>
             </ul>
-            <a class="button button-primary" href="mailto:info@sotkon.com">
-              Discuss the rebuild
-              <span aria-hidden="true">-></span>
-            </a>
+            <form class="contact-form">
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Your name" />
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" placeholder="you@example.com" />
+              </label>
+              <label class="full">
+                Message
+                <textarea name="message" rows="4" placeholder="Tell us about the project"></textarea>
+              </label>
+              <button class="button button-primary" type="button">
+                Discuss the rebuild
+                <span aria-hidden="true">-></span>
+              </button>
+            </form>
           </div>
         </div>
       </section>
