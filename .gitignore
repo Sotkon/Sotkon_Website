@@ -1,0 +1,7 @@
+sotkon_extracted/
+sotkis_reference/
+sotkon_redesign/
+node_modules/
+.DS_Store
+Thumbs.db
+npm-debug.log*
