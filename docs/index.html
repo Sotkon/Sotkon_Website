@@ -19,7 +19,7 @@
   <body>
     <header class="site-header" data-header>
       <div class="header-shell">
-        <a class="brand" href="#top" aria-label="Sotkon home">
+        <a class="brand" href="./" aria-label="Sotkon home">
           <span class="brand-mark">sk</span>
           <span class="brand-copy">
             <span class="brand-word">sotkon</span>
@@ -32,53 +32,61 @@
           <span></span>
         </button>
         <nav class="nav" data-nav>
-          <a href="#solutions">Solutions</a>
-          <a href="#products">Products</a>
-          <a href="#proof">Proof</a>
-          <a href="#sotkis">SOTKIS</a>
-          <a href="#contact">Contact</a>
+          <a href="./">Home</a>
+          <a href="./en/advantages/">Advantages</a>
+          <a href="https://koncept.sotkon.com/">Our Concept</a>
+          <div class="nav-item">
+            <button class="nav-trigger" type="button">Products</button>
+            <div class="nav-submenu">
+              <a href="./en/waste-systems/">Waste Systems</a>
+              <a href="./en/intake-columns/">Intake Columns</a>
+              <a href="https://website.sotkis.com/home?lang=en">Sotkis</a>
+              <a href="./en/installation/">Installation & Maintenance</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="./en/news/archive/">Media</a>
+            <div class="nav-submenu">
+              <a href="./en/news/archive/">News</a>
+              <a href="./en/gallery/">Gallery</a>
+              <a href="./en/videos/">Videos</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="#contact">Contacts</a>
+            <div class="nav-submenu">
+              <a href="./en/sotkon-group-companies/">Sotkon Group Companies</a>
+              <a href="./en/find-a-distributor/">Find a Distributor</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="./en/about-sotkon/">About</a>
+            <div class="nav-submenu">
+              <a href="./en/about-sotkon/">About Sotkon</a>
+              <a href="./en/ourhistory/">Our History</a>
+            </div>
+          </div>
         </nav>
         <a class="header-cta" href="#contact">Start a project</a>
       </div>
     </header>
 
     <main id="top">
-      <section class="hero">
+      <section class="hero" aria-label="Sotkon waste systems banner">
         <img
           class="hero-image"
-          src="./assets/hero.jpg"
-          alt="Sotkon underground waste system installed in an urban street"
+          src="./assets/sotkon-legacy-hero.jpg"
+          alt="City skyline and green field from the original Sotkon homepage"
         />
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <p class="eyebrow">Urban waste infrastructure</p>
-          <h1>Cleaner cities need quieter infrastructure.</h1>
-          <p class="hero-copy">
-            Sotkon designs underground, semi-underground and intelligent waste systems
-            that reduce street clutter, collection frequency and operating cost.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#solutions">
-              Explore the system
-              <span aria-hidden="true">-></span>
-            </a>
-            <a class="button button-ghost" href="#proof">View operating case</a>
-          </div>
+        <div class="hero-content hero-content-centered">
+          <h1>Simple and efficient<br />waste systems</h1>
         </div>
-        <aside class="hero-proof" aria-label="Sotkon proof points">
-          <article>
-            <strong>1995</strong>
-            <span>brand origin</span>
-          </article>
-          <article>
-            <strong>30%</strong>
-            <span>potential OPEX reduction</span>
-          </article>
-          <article>
-            <strong>EN13071</strong>
-            <span>European safety standard</span>
-          </article>
-        </aside>
+        <img
+          class="hero-container-image"
+          src="./assets/sotkon-access-container.png"
+          alt="Sotkon Access container"
+        />
       </section>
 
       <section id="solutions" class="section intro">
@@ -125,7 +133,7 @@
       <section id="products" class="section products">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Product architecture</p>
+            <p class="eyebrow">Waste systems</p>
             <h2>One family, multiple urban answers.</h2>
           </div>
           <div class="product-layout">
@@ -329,7 +337,7 @@
                 <textarea name="message" rows="4" placeholder="Tell us about the project"></textarea>
               </label>
               <button class="button button-primary" type="button">
-                Discuss the rebuild
+                Request a proposal
                 <span aria-hidden="true">-></span>
               </button>
             </form>

@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "build": "node src/build/site.js",
     "dev": "node sotkon_redesign/server.js"
   }
 }
