@@ -113,3 +113,50 @@ document.querySelectorAll("[data-koncept-viewer]").forEach((viewer) => {
 
   setFrame(slider?.value || 1);
 });
+
+document.querySelectorAll("[data-tabbed-product]").forEach((module) => {
+  const tabs = [...module.querySelectorAll("[data-config-tab]")];
+  const panels = [...module.querySelectorAll("[data-config-panel]")];
+
+  function activate(id) {
+    tabs.forEach((tab) => tab.classList.toggle("is-active", tab.dataset.configTab === id));
+    panels.forEach((panel) => panel.classList.toggle("is-active", panel.dataset.configPanel === id));
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => activate(tab.dataset.configTab));
+  });
+});
+
+document.querySelectorAll("[data-config-gallery]").forEach((gallery) => {
+  const image = gallery.querySelector("[data-gallery-image]");
+  const caption = gallery.querySelector("[data-gallery-caption]");
+  const thumbs = [...gallery.querySelectorAll("[data-gallery-thumb]")];
+  const prev = gallery.querySelector("[data-gallery-prev]");
+  const next = gallery.querySelector("[data-gallery-next]");
+  let index = 0;
+
+  function show(nextIndex) {
+    index = (nextIndex + thumbs.length) % thumbs.length;
+    const thumb = thumbs[index];
+    image.src = thumb.dataset.src;
+    image.alt = thumb.dataset.caption;
+    caption.textContent = thumb.dataset.caption;
+    thumbs.forEach((item, itemIndex) => item.classList.toggle("is-active", itemIndex === index));
+  }
+
+  thumbs.forEach((thumb, thumbIndex) => {
+    thumb.addEventListener("click", () => show(thumbIndex));
+  });
+
+  prev?.addEventListener("click", () => show(index - 1));
+  next?.addEventListener("click", () => show(index + 1));
+});
+
+document.querySelectorAll("[data-jump-component]").forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    const id = trigger.dataset.jumpComponent;
+    const module = document.querySelector("[data-tabbed-product]");
+    module?.querySelector(`[data-config-tab="${id}"]`)?.click();
+  });
+});
