@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"C:\\\\Users\\\\MiguelGonçalves\\\\source\\\\repos\\\\www\\\\.claude\\\\worktrees\\\\zen-cartwright-bc67af\" log --oneline -15)",
+      "PowerShell(cd \"C:\\\\Users\\\\MiguelGonçalves\\\\source\\\\repos\\\\www\"; Get-ChildItem -Recurse -Directory -Depth 2 | Select-Object -ExpandProperty FullName | ForEach-Object { $_ -replace [regex]::Escape\\(\"C:\\\\Users\\\\MiguelGonçalves\\\\source\\\\repos\\\\www\"\\), \".\" } | Sort-Object)",
+      "Bash(node src/build/site.js)",
+      "PowerShell(git -C \"C:\\\\Users\\\\MiguelGon�alves\\\\source\\\\repos\\\\www\" diff --stat 71b6760)"
+    ]
+  }
+}
