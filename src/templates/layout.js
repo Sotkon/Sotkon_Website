@@ -2,8 +2,7 @@ function header(depth = "../../../") {
   return `<header class="site-header" data-header>
       <div class="header-shell">
         <a class="brand" href="${depth}index.html" aria-label="Sotkon home">
-          <span class="brand-mark">sk</span>
-          <span class="brand-copy"><span class="brand-word">sotkon</span><span class="brand-line">waste systems</span></span>
+          <img src="${depth}assets/SotkonMain_logo.svg" alt="Sotkon waste systems" class="brand-logo">
         </a>
         <button class="menu-toggle" type="button" aria-label="Toggle navigation" data-menu-toggle><span></span><span></span><span></span></button>
         <nav class="nav" data-nav>

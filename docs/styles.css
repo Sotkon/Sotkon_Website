@@ -96,45 +96,15 @@ button {
   filter: none;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border: 2px solid rgba(255, 255, 255, 0.82);
-  border-radius: 50%;
-  color: var(--green-950);
-  background: var(--lime);
-  font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 900;
-  letter-spacing: -0.06em;
+.brand-logo {
+  height: 36px;
+  width: auto;
+  filter: brightness(0) invert(1);
 }
 
-.site-header.is-scrolled .brand-mark,
-.site-header.is-open .brand-mark {
-  border-color: rgba(15, 54, 32, 0.16);
-}
-
-.brand-copy {
-  display: grid;
-  gap: 0;
-}
-
-.brand-word {
-  font-family: var(--font-heading);
-  font-size: 29px;
-  font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-}
-
-.brand-line {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  opacity: 0.82;
+.site-header.is-scrolled .brand-logo,
+.site-header.is-open .brand-logo {
+  filter: none;
 }
 
 .nav {
