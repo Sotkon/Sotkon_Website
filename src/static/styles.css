@@ -612,6 +612,10 @@ h3 {
   padding: 24px;
 }
 
+.news .button {
+  margin-top: 28px;
+}
+
 .product-list p,
 .process-steps p {
   margin: 16px 0 0;
