@@ -1,0 +1,87 @@
+[
+  {
+    "route": "en/about-sotkon/index.html",
+    "title": "Sotkon - About Sotkon",
+    "description": "Sotkon is an international company dedicated to the design, manufacture and sale of underground and semi-underground waste systems, holding several patented products."
+  },
+  {
+    "route": "en/advantages/index.html",
+    "title": "Sotkon - Advantages",
+    "description": "The Koncept underground system is designed to reduce vehicle needs, personnel time, maintenance effort and visual impact in the city."
+  },
+  {
+    "route": "en/find-a-distributor/index.html",
+    "title": "Sotkon - Find a Distributor",
+    "description": "A dedicated route for customers looking for a local Sotkon distributor or project contact."
+  },
+  {
+    "route": "en/gallery/index.html",
+    "title": "Sotkon - Gallery",
+    "description": "A future visual library for installations, products, intake columns and city deployments."
+  },
+  {
+    "route": "en/installation/index.html",
+    "title": "Sotkon - Installation &amp; Maintenance",
+    "description": "Sotkon equipment is designed for simple, fast and low-cost installation, followed by planned maintenance that protects the system over time."
+  },
+  {
+    "route": "en/intake-columns/index.html",
+    "title": "Sotkon - Intake Columns",
+    "description": "Intake columns shape the citizen interaction point: durable, recognizable and adaptable to waste streams, accessibility needs and city identity."
+  },
+  {
+    "route": "en/news/archive/index.html",
+    "title": "Sotkon - News",
+    "description": "A redesigned archive landing point for company announcements, events, product news and field updates."
+  },
+  {
+    "route": "en/ourhistory/index.html",
+    "title": "Sotkon - Our History",
+    "description": "More than 30 years of development, product refinement and international implementation shaped the Sotkon waste-system family."
+  },
+  {
+    "route": "en/sotkon-group-companies/index.html",
+    "title": "Sotkon - Sotkon Group Companies",
+    "description": "A contact route for the Sotkon group presence and company network."
+  },
+  {
+    "route": "en/videos/index.html",
+    "title": "Sotkon - Videos",
+    "description": "A clean video landing route for collection demos, installation sequences and product explainers."
+  },
+  {
+    "route": "en/waste-systems/index.html",
+    "title": "Sotkon - Waste Systems",
+    "description": "Sotkon modular underground, semi-underground and surface waste systems."
+  },
+  {
+    "route": "en/waste-systems/oily/index.html",
+    "title": "Sotkon - Oily",
+    "description": "A surface collection solution designed to receive used cooking oil bottles."
+  },
+  {
+    "route": "en/waste-systems/oplus/index.html",
+    "title": "Sotkon - O+",
+    "description": "A practical surface solution for organic waste, used cooking oil or other specific waste streams."
+  },
+  {
+    "route": "en/waste-systems/qubus/index.html",
+    "title": "Sotkon - Qubus",
+    "description": "A semi-underground system applying Koncept principles where full underground placement is constrained."
+  },
+  {
+    "route": "en/waste-systems/qubus-e/index.html",
+    "title": "Sotkon - Qubus E",
+    "description": "The adaptation of the Evos waste disposal system to a semi-underground solution."
+  },
+  {
+    "route": "en/waste-systems/the-integra/index.html",
+    "title": "Sotkon - Integra",
+    "description": "A side-loading collection solution based on simplicity of operation and installation."
+  },
+  {
+    "route": "index.html",
+    "title": "Sotkon - Simple and Efficient Waste Systems",
+    "description": "A modern concept redesign for Sotkon, based on public Sotkon content and the Sotkis design language."
+  }
+]

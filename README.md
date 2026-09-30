@@ -1,36 +1,50 @@
-# Sotkon Website Preview
+# Sotkon website preview
 
-Static preview and GitHub Pages output for the Sotkon redesign.
+Static, English-language preview with 20 routes. Node.js 22.18+ (22.x) builds the complete site; no Node server or npm dependencies are deployed to GitHub Pages.
 
-## Workflow
+## Start from a clean checkout
 
-`src/` is the source of truth for the shared product-page platform.
-
-- `src/data/products.js` stores product content, image references, specs, brochure links, and 360 sequence paths.
-- `src/templates/` renders reusable HTML layouts.
-- `src/static/` stores shared CSS, browser JavaScript, and the local preview server.
-- `docs/` is the GitHub Pages output.
-- `sotkon_redesign/` is the local preview output served by the dev server.
-
-Build generated product pages and shared static files:
-
-```bash
-npm run build
-```
-
-Run locally:
-
-```bash
+```sh
+npm ci
 npm run dev
 ```
 
-On Windows PowerShell, if `npm` is blocked by execution policy, use:
+Open http://127.0.0.1:5173. `dev` builds first and serves `docs/` on loopback only. Run `npm run build` after source edits and refresh the browser (there is no watch mode). Use `npm.cmd` in Windows PowerShell if execution policy blocks `npm.ps1`. `PORT` overrides the preview port.
 
-```powershell
-npm.cmd run build
-npm.cmd run dev
+## Edit the sources
+
+| Location               | Purpose                                                     |
+| ---------------------- | ----------------------------------------------------------- |
+| `src/pages/`           | Editable main content for 17 pages, including the homepage  |
+| `src/data/pages.json`  | Routes, titles and descriptions for those pages             |
+| `src/data/products.js` | Plain-text data for Koncept, Evos and Apto                  |
+| `src/templates/`       | Shared navigation, footer and product markup; text escaping |
+| `src/static/`          | Browser CSS/JS and the local preview server                 |
+| `public/assets/`       | Original images, brochures and animation frames             |
+| `src/build/`           | Site generation and derived WebP images                     |
+| `scripts/`, `test/`    | Validation, generated-output checks and regression tests    |
+| `docs/`                | Generated GitHub Pages output; never edit directly          |
+
+Every page uses the same header/footer. Page-body HTML in `src/pages/` is trusted repository code; product strings are escaped by the renderer. Add generic pages through both the route manifest and a body file. Add structured product pages through the product data file. Asset paths remain compatible with the existing public URLs.
+
+## Required checks
+
+```sh
+npm run format
+npm run check
+npm run check:generated
 ```
 
-## Asset Contract
+`check` runs ESLint, builds the site, validates local URLs/anchors/images/animation frames and runs tests. Tests cover a clean, deterministic build, HTML escaping and the local server's path boundary. `check:generated` compares `docs/` with an independent clean build, including missing, changed and obsolete files. When removing a route or asset, remove its old generated file as well; the build never recursively deletes the output folder.
 
-Current public asset paths are preserved under `docs/assets/` and `sotkon_redesign/assets/` so existing pages do not break. Product ownership is declared in `src/data/products.js`; when the remaining product pages are migrated, assets can be physically grouped by product in a follow-up migration.
+Commit source changes and rebuilt `docs/` together. The PR workflow checks formatting, generated output and tests before merge. GitHub Pages continues to publish the `main` branch's `/docs` directory. These checks do not publish or merge anything.
+
+## Images and interactive components
+
+The build reads image dimensions, writes width/height attributes, defers below-the-fold images and creates WebP alternatives for large images when smaller. Original assets and the 101-frame sequences are retained. The first image after the shared logo is treated as the hero; keep hero images first in each body. Animation plays only on demand and stops when hidden or outside the viewport. Tabs and the viewer support keyboard navigation.
+
+## Current product scope
+
+This remains a preview: News, Gallery and distributor/contact pages contain migration placeholders. There is no CMS, search, inquiry submission, authentication or backend. Turning these into production features requires separate requirements and real content. The development server is local-only; its headers are not configuration for GitHub Pages or a future production host.
+
+Before changing visual components, check desktop and narrow mobile widths, navigation, tabs, galleries and the 360 viewer. Record what was actually tested in the PR. Build checks do not substitute for visual review or deployment verification.

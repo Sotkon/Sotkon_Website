@@ -1,57 +1,81 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require("node:fs");
+const path = require("node:path");
 const { products } = require("../data/products");
+const pages = require("../data/pages.json");
 const { renderProductPage } = require("../templates/productPage");
+const { pageShell } = require("../templates/layout");
+const { prepareImages, enhanceImages } = require("./images");
 
 const root = path.resolve(__dirname, "../..");
-const outputs = ["docs", "sotkon_redesign"];
 
-function ensureDir(dir) {
-  fs.mkdirSync(dir, { recursive: true });
-}
-
-function copyFile(source, target) {
-  ensureDir(path.dirname(target));
-  fs.copyFileSync(source, target);
-}
-
-function copyDir(source, target) {
-  ensureDir(target);
+function copyTree(source, target) {
+  fs.mkdirSync(target, { recursive: true });
   for (const entry of fs.readdirSync(source, { withFileTypes: true })) {
     const from = path.join(source, entry.name);
     const to = path.join(target, entry.name);
-    if (entry.isDirectory()) {
-      copyDir(from, to);
-    } else {
-      copyFile(from, to);
-    }
+    if (entry.isDirectory()) copyTree(from, to);
+    else fs.copyFileSync(from, to);
   }
 }
 
-function writeFile(target, content) {
-  ensureDir(path.dirname(target));
-  fs.writeFileSync(target, content);
-}
-
-function buildOutput(output) {
-  const outputRoot = path.join(root, output);
-  copyFile(path.join(root, "src/static/styles.css"), path.join(outputRoot, "styles.css"));
-  copyFile(path.join(root, "src/static/script.js"), path.join(outputRoot, "script.js"));
-
-  if (output === "sotkon_redesign") {
-    copyFile(path.join(root, "src/static/server.js"), path.join(outputRoot, "server.js"));
-  }
-
-  for (const product of products) {
-    writeFile(
-      path.join(outputRoot, "en/waste-systems", product.slug, "index.html"),
-      renderProductPage(product),
+async function buildSite(outputRoot = path.join(root, "docs")) {
+  copyTree(path.join(root, "public"), outputRoot);
+  const images = await prepareImages(
+    path.join(root, "public/assets"),
+    path.join(outputRoot, "assets"),
+  );
+  for (const name of ["styles.css", "script.js"]) {
+    fs.copyFileSync(
+      path.join(root, "src/static", name),
+      path.join(outputRoot, name),
     );
   }
+  const rendered = pages.map(({ route, title, description }) => ({
+    route,
+    html: pageShell({
+      title,
+      description,
+      body: fs.readFileSync(path.join(root, "src/pages", route), "utf8"),
+      depth: "../".repeat(route.split("/").length - 1) || "./",
+    }),
+  }));
+  for (const product of products) {
+    rendered.push({
+      route: `en/waste-systems/${product.slug}/index.html`,
+      html: renderProductPage(product),
+    });
+  }
+  const routes = new Set();
+  for (const { route, html } of rendered) {
+    if (routes.has(route) || !/^(?:[a-z0-9-]+\/)*index\.html$/.test(route)) {
+      throw new Error(`Invalid or duplicate route: ${route}`);
+    }
+    routes.add(route);
+    const target = path.join(outputRoot, route);
+    fs.mkdirSync(path.dirname(target), { recursive: true });
+    fs.writeFileSync(
+      target,
+      enhanceImages(html, images).replace(/\r\n/g, "\n"),
+    );
+  }
+  return {
+    pages: routes.size,
+    optimizedImages: [...images.values()].filter((image) => image.optimized)
+      .length,
+  };
 }
 
-for (const output of outputs) {
-  buildOutput(output);
+if (require.main === module) {
+  buildSite()
+    .then((result) =>
+      console.log(
+        `Built ${result.pages} pages; ${result.optimizedImages} optimized images.`,
+      ),
+    )
+    .catch((error) => {
+      console.error(error);
+      process.exitCode = 1;
+    });
 }
 
-console.log(`Built ${products.length} product pages into ${outputs.join(" and ")}.`);
+module.exports = { buildSite };
