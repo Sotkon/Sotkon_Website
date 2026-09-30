@@ -4,302 +4,295 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sotkon - Simple and Efficient Waste Systems</title>
-    <meta
-      name="description"
-      content="A modern concept redesign for Sotkon, based on public Sotkon content and the Sotkis design language."
-    />
+    <meta name="description" content="A modern concept redesign for Sotkon, based on public Sotkon content and the Sotkis design language." />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="site-header" data-header>
       <div class="header-shell">
-        <a class="brand" href="./" aria-label="Sotkon home">
-          <img src="assets/SotkonMain_logo.svg" alt="Sotkon waste systems" class="brand-logo">
+        <a class="brand" href="./index.html" aria-label="Sotkon home">
+          <img src="./assets/SotkonMain_logo.svg" alt="Sotkon waste systems" class="brand-logo" width="900" height="340" decoding="async">
         </a>
-        <button class="menu-toggle" type="button" aria-label="Toggle navigation" data-menu-toggle>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="nav" data-nav>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-navigation" data-menu-toggle><span></span><span></span><span></span></button>
+        <nav class="nav" id="site-navigation" aria-label="Main navigation" data-nav>
           <a href="./">Home</a>
           <a href="./en/advantages/">Advantages</a>
           <a href="https://koncept.sotkon.com/">Our Concept</a>
-          <div class="nav-item">
-            <button class="nav-trigger" type="button">Products</button>
-            <div class="nav-submenu">
-              <a href="./en/waste-systems/">Waste Systems</a>
-              <a href="./en/intake-columns/">Intake Columns</a>
-              <a href="https://website.sotkis.com/home?lang=en">Sotkis</a>
-              <a href="./en/installation/">Installation & Maintenance</a>
-            </div>
-          </div>
-          <div class="nav-item">
-            <a href="./en/news/archive/">Media</a>
-            <div class="nav-submenu">
-              <a href="./en/news/archive/">News</a>
-              <a href="./en/gallery/">Gallery</a>
-              <a href="./en/videos/">Videos</a>
-            </div>
-          </div>
-          <div class="nav-item">
-            <a href="./en/find-a-distributor/">Contacts</a>
-            <div class="nav-submenu">
-              <a href="./en/sotkon-group-companies/">Sotkon Group Companies</a>
-              <a href="./en/find-a-distributor/">Find a Distributor</a>
-            </div>
-          </div>
-          <div class="nav-item">
-            <a href="./en/about-sotkon/">About</a>
-            <div class="nav-submenu">
-              <a href="./en/about-sotkon/">About Sotkon</a>
-              <a href="./en/ourhistory/">Our History</a>
-            </div>
-          </div>
+          <div class="nav-item"><button class="nav-trigger" type="button">Products</button><div class="nav-submenu"><a href="./en/waste-systems/">Waste Systems</a><a href="./en/intake-columns/">Intake Columns</a><a href="https://website.sotkis.com/home?lang=en">Sotkis</a><a href="./en/installation/">Installation &amp; Maintenance</a></div></div>
+          <div class="nav-item"><a href="./en/news/archive/">Media</a><div class="nav-submenu"><a href="./en/news/archive/">News</a><a href="./en/gallery/">Gallery</a><a href="./en/videos/">Videos</a></div></div>
+          <div class="nav-item"><a href="./en/find-a-distributor/">Contacts</a><div class="nav-submenu"><a href="./en/sotkon-group-companies/">Sotkon Group Companies</a><a href="./en/find-a-distributor/">Find a Distributor</a></div></div>
+          <div class="nav-item"><a href="./en/about-sotkon/">About</a><div class="nav-submenu"><a href="./en/about-sotkon/">About Sotkon</a><a href="./en/ourhistory/">Our History</a></div></div>
         </nav>
         <a class="header-cta" href="./en/find-a-distributor/">Request proposal</a>
       </div>
     </header>
-
     <main id="top">
-      <section class="hero" aria-label="Sotkon waste systems banner">
-        <img
-          class="hero-image"
-          src="./assets/sotkon-legacy-hero.jpg"
-          alt="City skyline and green field from the original Sotkon homepage"
-        />
-        <div class="hero-overlay"></div>
-        <div class="hero-content hero-content-centered">
-          <h1>Simple and efficient<br />waste systems</h1>
-        </div>
-        <img
-          class="hero-container-image"
-          src="./assets/sotkon-access-container.png"
-          alt="Sotkon Access container"
-        />
-      </section>
+  <section class="hero" aria-label="Sotkon waste systems banner">
+    <img
+      class="hero-image"
+      src="./assets/sotkon-legacy-hero.webp"
+      alt="City skyline and green field from the original Sotkon homepage" width="1920" height="1050" decoding="async">
+    <div class="hero-overlay"></div>
+    <div class="hero-content hero-content-centered">
+      <h1>Simple and efficient<br />waste systems</h1>
+    </div>
+    <img
+      class="hero-container-image"
+      src="./assets/sotkon-access-container.png"
+      alt="Sotkon Access container" width="266" height="470" decoding="async" loading="lazy">
+  </section>
 
-      <section id="solutions" class="section intro">
-        <div class="container intro-grid">
-          <div>
-            <p class="eyebrow">The Sotkon Koncept</p>
-            <h2>High-capacity collection points without heavy visual impact.</h2>
-          </div>
-          <div class="intro-copy">
-            <p>
-              Sotkon systems are engineered to make municipal waste collection simpler:
-              modular equipment, pre-assembled delivery, fast installation, safe operation
-              and a design language that can sit naturally in historic streets, residential
-              districts and high-traffic public space.
-            </p>
-            <div class="metrics">
-              <article>
-                <strong>3m3</strong>
-                <span>closed-bottom underground container capacity</span>
-              </article>
-              <article>
-                <strong>3 min</strong>
-                <span>typical collection operation with one operator</span>
-              </article>
-              <article>
-                <strong>1 fleet</strong>
-                <span>compatible with existing collection vehicles</span>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="showcase">
-        <div class="showcase-media">
-          <img src="./assets/systems.png" alt="Sotkon installed systems in a city street" />
-        </div>
-        <div class="showcase-caption">
-          <span>Installed system</span>
-          <p>Visible above ground only where the citizen interacts. Capacity lives below the street.</p>
-        </div>
-      </section>
-
-      <section id="products" class="section products">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Waste systems</p>
-            <h2>One family, multiple urban answers.</h2>
-          </div>
-          <div class="product-layout">
-            <article class="product-hero-card">
-              <img src="./assets/product-wide.png" alt="Sotkon waste system line" />
-              <div>
-                <span>Flagship</span>
-                <h3>Koncept underground system</h3>
-                <p>
-                  A patented high-capacity storage system designed for simple collection,
-                  low maintenance and seamless public-space integration.
-                </p>
-              </div>
-            </article>
-            <div class="product-list">
-              <article>
-                <span>01</span>
-                <h3>Evos</h3>
-                <p>Compact, robust underground equipment where the system moves as one during collection.</p>
-              </article>
-              <article>
-                <span>02</span>
-                <h3>Integra</h3>
-                <p>Automated side-loading operation with simple mechanisms and Wi-Fi control.</p>
-              </article>
-              <article>
-                <span>03</span>
-                <h3>Qubus</h3>
-                <p>Semi-underground placement for streets with underground obstacles or harsh winters.</p>
-              </article>
-              <article>
-                <span>04</span>
-                <h3>Oily and O+</h3>
-                <p>Surface systems for cooking oil, organics and specific collection streams.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="sotkis" class="section intelligence">
-        <div class="container intelligence-panel">
-          <div>
-            <p class="eyebrow">Connected operation</p>
-            <h2>Hardware prepared for intelligent city management.</h2>
-            <p>
-              SOTKIS adds the operational layer: fill-level monitoring, access control and
-              PAYT-ready data. Municipal teams can understand usage patterns and collect
-              only when the system says collection is needed.
-            </p>
-          </div>
-          <div class="module-stack">
-            <article>
-              <span>Level</span>
-              <p>Ultrasonic fill-level monitoring for route planning and unnecessary-trip reduction.</p>
-            </article>
-            <article>
-              <span>Access</span>
-              <p>RFID-based usage data by user, waste stream, time and deposit event.</p>
-            </article>
-            <article>
-              <span>PAYT</span>
-              <p>Data foundation for fairer, behaviour-aware waste taxation models.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="field section">
-        <div class="container field-grid">
-          <img src="./assets/access.png" alt="Resident using a Sotkon access card" />
-          <div>
-            <p class="eyebrow">Citizen interaction</p>
-            <h2>The interface is simple because the engineering is not.</h2>
-            <p>
-              Residents see a clean intake column, clear waste-stream identification and
-              optional access control. Operators get durable equipment, serviceable
-              mechanisms and data when the city needs a smarter waste policy.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="proof" class="section proof">
-        <div class="container proof-grid">
-          <div class="proof-copy">
-            <p class="eyebrow">Advantages - Operational case</p>
-            <h2>Less route pressure. More capacity where people actually need it.</h2>
-            <p>
-              The commercial argument is not only cleaner streets. Sotkon changes the
-              operating model: fewer collection trips, fewer people required per operation,
-              less vehicle pressure and longer intervals between maintenance events.
-            </p>
-          </div>
-          <div class="cost-panel">
-            <div class="cost-row head">
-              <span>Model</span>
-              <span>Capacity</span>
-              <span>Savings</span>
-            </div>
-            <div class="cost-row">
-              <span>Door-to-door</span>
-              <span>100L</span>
-              <strong>baseline</strong>
-            </div>
-            <div class="cost-row">
-              <span>Surface</span>
-              <span>1000L</span>
-              <strong>5%</strong>
-            </div>
-            <div class="cost-row">
-              <span>Underground</span>
-              <span>3000L</span>
-              <strong>20%</strong>
-            </div>
-            <div class="cost-row active">
-              <span>Sotkon Koncept</span>
-              <span>3000L</span>
-              <strong>30%</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="news" class="section news">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">News</p>
-            <h2>Latest company and product updates.</h2>
-          </div>
-          <div class="product-list">
-            <article>
-              <span>01</span>
-              <h3>Events and exhibitions</h3>
-              <p>Follow Sotkon presence in international waste, recycling and smart-city events.</p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>Product updates</h3>
-              <p>New system options, intake columns, Sotkis modules and operational improvements.</p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>Installations</h3>
-              <p>Project stories from municipalities, operators and public-space deployments.</p>
-            </article>
-            <article>
-              <span>04</span>
-              <h3>Company news</h3>
-              <p>Certifications, milestones and circular-economy infrastructure updates.</p>
-            </article>
-          </div>
-          <a class="button button-primary" href="./en/news/archive/">View news <span aria-hidden="true">-></span></a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container footer-grid">
-        <div>
-          <strong>sotkon</strong>
-          <p>Simple and efficient waste systems.</p>
-        </div>
-        <div>
-          <span>Website scope</span>
-          <p>Waste systems, Sotkis intelligence, operational advantages and company news.</p>
+  <section id="solutions" class="section intro">
+    <div class="container intro-grid">
+      <div>
+        <p class="eyebrow">The Sotkon Koncept</p>
+        <h2>High-capacity collection points without heavy visual impact.</h2>
+      </div>
+      <div class="intro-copy">
+        <p>
+          Sotkon systems are engineered to make municipal waste collection
+          simpler: modular equipment, pre-assembled delivery, fast installation,
+          safe operation and a design language that can sit naturally in
+          historic streets, residential districts and high-traffic public space.
+        </p>
+        <div class="metrics">
+          <article>
+            <strong>3m3</strong>
+            <span>closed-bottom underground container capacity</span>
+          </article>
+          <article>
+            <strong>3 min</strong>
+            <span>typical collection operation with one operator</span>
+          </article>
+          <article>
+            <strong>1 fleet</strong>
+            <span>compatible with existing collection vehicles</span>
+          </article>
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <section class="showcase">
+    <div class="showcase-media">
+      <img
+        src="./assets/systems.webp"
+        alt="Sotkon installed systems in a city street" width="1520" height="450" decoding="async" loading="lazy">
+    </div>
+    <div class="showcase-caption">
+      <span>Installed system</span>
+      <p>
+        Visible above ground only where the citizen interacts. Capacity lives
+        below the street.
+      </p>
+    </div>
+  </section>
+
+  <section id="products" class="section products">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Waste systems</p>
+        <h2>One family, multiple urban answers.</h2>
+      </div>
+      <div class="product-layout">
+        <article class="product-hero-card">
+          <img src="./assets/product-wide.webp" alt="Sotkon waste system line" width="1520" height="450" decoding="async" loading="lazy">
+          <div>
+            <span>Flagship</span>
+            <h3>Koncept underground system</h3>
+            <p>
+              A patented high-capacity storage system designed for simple
+              collection, low maintenance and seamless public-space integration.
+            </p>
+          </div>
+        </article>
+        <div class="product-list">
+          <article>
+            <span>01</span>
+            <h3>Evos</h3>
+            <p>
+              Compact, robust underground equipment where the system moves as
+              one during collection.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Integra</h3>
+            <p>
+              Automated side-loading operation with simple mechanisms and Wi-Fi
+              control.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Qubus</h3>
+            <p>
+              Semi-underground placement for streets with underground obstacles
+              or harsh winters.
+            </p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Oily and O+</h3>
+            <p>
+              Surface systems for cooking oil, organics and specific collection
+              streams.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sotkis" class="section intelligence">
+    <div class="container intelligence-panel">
+      <div>
+        <p class="eyebrow">Connected operation</p>
+        <h2>Hardware prepared for intelligent city management.</h2>
+        <p>
+          SOTKIS adds the operational layer: fill-level monitoring, access
+          control and PAYT-ready data. Municipal teams can understand usage
+          patterns and collect only when the system says collection is needed.
+        </p>
+      </div>
+      <div class="module-stack">
+        <article>
+          <span>Level</span>
+          <p>
+            Ultrasonic fill-level monitoring for route planning and
+            unnecessary-trip reduction.
+          </p>
+        </article>
+        <article>
+          <span>Access</span>
+          <p>
+            RFID-based usage data by user, waste stream, time and deposit event.
+          </p>
+        </article>
+        <article>
+          <span>PAYT</span>
+          <p>
+            Data foundation for fairer, behaviour-aware waste taxation models.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="field section">
+    <div class="container field-grid">
+      <img
+        src="./assets/access.webp"
+        alt="Resident using a Sotkon access card" width="1520" height="450" decoding="async" loading="lazy">
+      <div>
+        <p class="eyebrow">Citizen interaction</p>
+        <h2>The interface is simple because the engineering is not.</h2>
+        <p>
+          Residents see a clean intake column, clear waste-stream identification
+          and optional access control. Operators get durable equipment,
+          serviceable mechanisms and data when the city needs a smarter waste
+          policy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proof" class="section proof">
+    <div class="container proof-grid">
+      <div class="proof-copy">
+        <p class="eyebrow">Advantages - Operational case</p>
+        <h2>
+          Less route pressure. More capacity where people actually need it.
+        </h2>
+        <p>
+          The commercial argument is not only cleaner streets. Sotkon changes
+          the operating model: fewer collection trips, fewer people required per
+          operation, less vehicle pressure and longer intervals between
+          maintenance events.
+        </p>
+      </div>
+      <div class="cost-panel">
+        <div class="cost-row head">
+          <span>Model</span>
+          <span>Capacity</span>
+          <span>Savings</span>
+        </div>
+        <div class="cost-row">
+          <span>Door-to-door</span>
+          <span>100L</span>
+          <strong>baseline</strong>
+        </div>
+        <div class="cost-row">
+          <span>Surface</span>
+          <span>1000L</span>
+          <strong>5%</strong>
+        </div>
+        <div class="cost-row">
+          <span>Underground</span>
+          <span>3000L</span>
+          <strong>20%</strong>
+        </div>
+        <div class="cost-row active">
+          <span>Sotkon Koncept</span>
+          <span>3000L</span>
+          <strong>30%</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="news" class="section news">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">News</p>
+        <h2>Latest company and product updates.</h2>
+      </div>
+      <div class="product-list">
+        <article>
+          <span>01</span>
+          <h3>Events and exhibitions</h3>
+          <p>
+            Follow Sotkon presence in international waste, recycling and
+            smart-city events.
+          </p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Product updates</h3>
+          <p>
+            New system options, intake columns, Sotkis modules and operational
+            improvements.
+          </p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Installations</h3>
+          <p>
+            Project stories from municipalities, operators and public-space
+            deployments.
+          </p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Company news</h3>
+          <p>
+            Certifications, milestones and circular-economy infrastructure
+            updates.
+          </p>
+        </article>
+      </div>
+      <a class="button button-primary" href="./en/news/archive/"
+        >View news <span aria-hidden="true">-></span></a
+      >
+    </div>
+  </section>
+</main>
+
+    <footer class="footer"><div class="container footer-grid"><div><strong>sotkon</strong><span>waste systems</span></div><p>Simple and efficient waste systems.</p></div></footer>
+    <script src="./script.js"></script>
   </body>
 </html>

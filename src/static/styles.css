@@ -1,3 +1,11 @@
+[hidden] {
+  display: none !important;
+}
+:focus-visible {
+  outline: 3px solid #165d41;
+  outline-offset: 4px;
+}
+
 :root {
   --green-950: #09140f;
   --green-900: #0f3620;
@@ -33,7 +41,8 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    linear-gradient(90deg, rgba(15, 54, 32, 0.035) 1px, transparent 1px) 0 0 / 82px 82px,
+    linear-gradient(90deg, rgba(15, 54, 32, 0.035) 1px, transparent 1px) 0 0 /
+      82px 82px,
     linear-gradient(180deg, var(--mint), #fbfdf9 42%, var(--concrete));
   font-family: var(--font-body);
   line-height: 1.6;
@@ -42,6 +51,7 @@ body {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -67,11 +77,17 @@ button {
   inset: 0 0 auto;
   z-index: 20;
   padding: 20px clamp(16px, 4vw, 72px);
-  transition: background 180ms ease, backdrop-filter 180ms ease;
+  transition:
+    background 180ms ease,
+    backdrop-filter 180ms ease;
 }
 
 .site-header.is-scrolled {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.68),
+    rgba(255, 255, 255, 0)
+  );
   backdrop-filter: blur(12px);
 }
 
@@ -171,7 +187,9 @@ button {
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, 8px);
-  transition: opacity 160ms ease, transform 160ms ease;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
 }
 
 .nav-submenu::before {
@@ -210,7 +228,9 @@ button {
   color: #000;
   background: var(--lime);
   box-shadow: 0 8px 20px rgba(148, 193, 31, 0.28);
-  transition: transform 160ms ease, background 160ms ease;
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
 }
 
 .header-cta:hover {
@@ -249,9 +269,24 @@ button {
 
 .hero-overlay {
   background:
-    radial-gradient(circle at 50% 46%, rgba(255, 255, 255, 0.08), transparent 24%),
-    linear-gradient(180deg, rgba(5, 13, 9, 0.12), rgba(5, 13, 9, 0.16) 48%, rgba(5, 13, 9, 0.32)),
-    linear-gradient(90deg, rgba(5, 13, 9, 0.28), transparent 28%, transparent 72%, rgba(5, 13, 9, 0.22));
+    radial-gradient(
+      circle at 50% 46%,
+      rgba(255, 255, 255, 0.08),
+      transparent 24%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(5, 13, 9, 0.12),
+      rgba(5, 13, 9, 0.16) 48%,
+      rgba(5, 13, 9, 0.32)
+    ),
+    linear-gradient(
+      90deg,
+      rgba(5, 13, 9, 0.28),
+      transparent 28%,
+      transparent 72%,
+      rgba(5, 13, 9, 0.22)
+    );
 }
 
 .hero-content {
@@ -350,7 +385,10 @@ h3 {
   padding: 0 8px 0 24px;
   border-radius: 999px;
   font-weight: 800;
-  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
 }
 
 .button span {
@@ -707,7 +745,11 @@ h3 {
   border: 1px solid var(--line);
   border-radius: var(--radius-soft);
   background:
-    radial-gradient(circle at 10% 10%, rgba(148, 193, 31, 0.2), transparent 30%),
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(148, 193, 31, 0.2),
+      transparent 30%
+    ),
     #ffffff;
   box-shadow: var(--shadow);
 }
@@ -905,7 +947,12 @@ h3 {
   inset: 0;
   content: "";
   background:
-    linear-gradient(90deg, rgba(5, 13, 9, 0.78), rgba(5, 13, 9, 0.42) 48%, rgba(5, 13, 9, 0.14)),
+    linear-gradient(
+      90deg,
+      rgba(5, 13, 9, 0.78),
+      rgba(5, 13, 9, 0.42) 48%,
+      rgba(5, 13, 9, 0.14)
+    ),
     linear-gradient(0deg, rgba(5, 13, 9, 0.58), transparent 56%);
 }
 
@@ -1482,7 +1529,12 @@ h3 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(4, 18, 13, 0.88), rgba(4, 18, 13, 0.5) 58%, rgba(4, 18, 13, 0.18)),
+    linear-gradient(
+      90deg,
+      rgba(4, 18, 13, 0.88),
+      rgba(4, 18, 13, 0.5) 58%,
+      rgba(4, 18, 13, 0.18)
+    ),
     linear-gradient(0deg, rgba(4, 18, 13, 0.72), rgba(4, 18, 13, 0.02) 48%);
 }
 
@@ -1915,7 +1967,9 @@ h3 {
   border-radius: var(--radius);
   color: var(--white);
   background: var(--green-950);
-  transition: transform 0.25s ease, background 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
 }
 
 .media-actions-grid a:hover {
@@ -2210,9 +2264,16 @@ h3 {
     display: grid;
     width: min(360px, calc(100vw - 32px));
     height: auto;
+    max-height: calc(100dvh - 100px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     padding: 18px 0;
     border-radius: 24px;
-    background: linear-gradient(145deg, rgba(235, 240, 245, 0.96), rgba(220, 228, 235, 0.96));
+    background: linear-gradient(
+      145deg,
+      rgba(235, 240, 245, 0.96),
+      rgba(220, 228, 235, 0.96)
+    );
   }
 
   .site-header.is-open .nav a,
@@ -2433,7 +2494,6 @@ h3 {
   .config-gallery-controls {
     grid-template-columns: 38px minmax(0, 1fr) 38px;
   }
-
 
   .loading-grid p {
     font-size: 0.92rem;
